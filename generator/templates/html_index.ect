@@ -8,7 +8,7 @@
   </thead>
 
   <tbody>
-    <tr data-foreach-<%= @lowercasedItemName %>="<%= @resourceName %>">
+    <tr data-foreach-<%= @lowercasedItemName %>="<%= @collectionName %>">
       <td>
         <a data-route='routes.<%= @resourceName %>[<%= @lowercasedItemName %>]' data-bind='<%= @lowercasedItemName %>'></a>
       </td>

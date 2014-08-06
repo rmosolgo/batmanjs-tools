@@ -15,20 +15,20 @@ generateDefaultHTML = (filepath, options) ->
   [folderName, templateName] = filepath.split("/")
   resourceNames = Inflector.fromPluralUnderscored(folderName)
 
-  pluralizedClassName =     resourceNames.plural.happyCamel
-  collectionName =          resourceNames.plural.sadCamel
-  resourceName =            resourceNames.plural.underscored
-  humanizedCollectionName = resourceNames.plural.humanized
+  capitalizedCollectionName =   resourceNames.plural.happyCamel
+  collectionName =              resourceNames.plural.sadCamel
+  resourceName =                resourceNames.plural.underscored
+  humanizedCollectionName =     resourceNames.plural.humanized
 
-  capitalizedItemName =     resourceNames.singular.happyCamel
-  itemName =                resourceNames.singular.sadCamel
-  humanizedItemName =       resourceNames.singular.humanized
-  lowercasedItemName =      resourceNames.singular.downcased
+  capitalizedItemName =         resourceNames.singular.happyCamel
+  itemName =                    resourceNames.singular.sadCamel
+  humanizedItemName =           resourceNames.singular.humanized
+  lowercasedItemName =          resourceNames.singular.downcased
 
   data = {
     resourceName
     folderName
-    pluralizedClassName
+    capitalizedCollectionName
     humanizedCollectionName
     collectionName
     itemName
