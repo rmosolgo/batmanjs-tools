@@ -1,0 +1,21 @@
+class <%= @appName %>.<%= @className %>View extends <%= @superclassName %>
+
+<% if @itemName?: %>
+
+  save<%= @modelName %>: ->
+    <%= @itemName %> = @controller.get('<%= @itemName %>')
+    <%= @itemName %>.save (err, record) ->
+      if err and err not instanceof Batman.ErrorsSet
+        throw err
+      else if !err?
+        Batman.redirect(record)
+
+<% end %>
+<% if @capitalizedItemName?: %>
+
+  destroy<%= @capitalizedItemName %>: (<%= @itemName %>) ->
+    return unless confirm "Are you sure?"
+    <%= @itemName %>.destroy (err, record) ->
+      throw err if err
+
+<% end %>

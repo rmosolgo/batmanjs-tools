@@ -1,0 +1,28 @@
+{
+  "name": "batman-cli",
+  "version": "0.0.0",
+  "description": "Command line tools for batman.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "jasmine-node --color --coffee --autotest spec/ --watch generator/**/*"
+  },
+  "keywords": [
+    "batman.js",
+    "cli",
+    "build",
+    "tools",
+    "scaffold"
+  ],
+  "author": "Robert Mosolgo",
+  "license": "MIT",
+  "dependencies": {
+    "ect": "^0.5.9",
+    "minimist": "^0.2.0",
+    "mkdirp": "^0.5.0",
+    "pluralize": "0.0.10",
+    "underscore.string": "^2.3.3"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}

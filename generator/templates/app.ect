@@ -1,0 +1,8 @@
+<% for config, value of @appConfigs: %>
+Batman.config.<%= config %> = <%- JSON.stringify(value) %>
+
+<% end %>
+<% if config?: %>
+
+<% end %>
+class @<%= @className %> extends Batman.App

@@ -1,0 +1,9 @@
+class <%= @appName %>.<%= @className %> extends <%= @superclassName %>
+
+  @resourceName: "<%= @resourceName %>"
+  @persist <%- @storageAdapter %>
+
+<% if @attributes.length: %>
+  @encode <%- (JSON.stringify(attr) for attr in @attributes).join(", ") %>
+
+<% end %>

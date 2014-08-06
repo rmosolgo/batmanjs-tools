@@ -1,0 +1,28 @@
+class <%= @appName %>.<%= @overrideClassName || (@pluralizedClassName + "Controller") %> extends <%= @superclassName %>
+
+<% if !!@routingKey : %>
+  routingKey: '<%= @routingKey %>'
+
+<% end %>
+<% if 'index' in @actions: %>
+  index: (params) ->
+    @set '<%= @collectionName %>', <%= @appName %>.<%= @modelName %>.get('all')
+
+<% end %>
+<% if 'show' in @actions: %>
+  show: (params) ->
+    <%= @appName %>.<%= @modelName %>.find params.id, (err, record) ->
+      @set '<%= @itemName %>', record
+
+<% end %>
+<% if 'edit' in @actions: %>
+  edit: (params) ->
+    <%= @appName %>.<%= @modelName %>.find params.id, (err, record) ->
+      @set '<%= @itemName %>', record.transaction()
+
+<% end %>
+<% if 'new' in @actions: %>
+  new: (params) ->
+    @set '<%= @itemName %>', new <%= @appName %>.<%= @modelName %>
+
+<% end %>

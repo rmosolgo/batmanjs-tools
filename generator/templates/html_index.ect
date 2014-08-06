@@ -1,0 +1,30 @@
+<h1>Listing <%= @humanizedCollectionName %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr data-foreach-<%= @lowercasedItemName %>="<%= @resourceName %>">
+      <td>
+        <a data-route='routes.<%= @resourceName %>[<%= @lowercasedItemName %>]' data-bind='<%= @lowercasedItemName %>'></a>
+      </td>
+      <td>
+        <a data-route='routes.<%= @resourceName %>[<%= @lowercasedItemName %>].edit'>Edit</a>
+      </td>
+      <td>
+        <a data-event-click='destroy<%= @capitalizedItemName %> | withArguments <%= @lowercasedItemName %>'>Destroy</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<a data-route='routes.<%= @resourceName %>.new'>
+  New <%= @humanizedItemName %>
+
+</a>
