@@ -1,14 +1,2 @@
 #!/usr/bin/env coffee
-cwd = process.cwd()
-
-try
-  batmanConfig = require("#{cwd}/.batman_config.json")
-catch e
-  if e.code is "MODULE_NOT_FOUND"
-    console.log "  --> NOT FOUND ./.batman_config.json"
-    batmanConfig = {}
-  else
-    throw e
-
-batmanConfig.appRoot ||= cwd
-require('../lib/cli').run(batmanConfig)
+require('../lib/cli').run()

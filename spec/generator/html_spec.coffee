@@ -1,7 +1,6 @@
 generateHTML = require "../../generator/generators/html"
 
 describe 'generating HTML', ->
-
   describe 'index', ->
     beforeEach ->
       code = generateHTML("body_parts/index", {

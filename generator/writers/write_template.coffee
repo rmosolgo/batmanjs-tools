@@ -1,8 +1,11 @@
 ECT = require('ect');
-renderer = ECT({ watch: true, root: __dirname + "/templates", ext : '.ect' });
 mkdirp = require 'mkdirp'
 fs    = require 'fs'
 path  = require 'path'
+
+root = path.join(__dirname, "../templates")
+renderer = ECT({ watch: true, root, ext : '.ect' });
+
 
 writeTemplate = (templateName, data, destination) ->
   code = renderer.render(templateName, data);

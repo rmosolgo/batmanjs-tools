@@ -1,4 +1,10 @@
 
+## To Do:
+
+- Index generator
+- Scaffold generator
+- Asset Server
+- Live reload server
 
 
 ## Tests

@@ -1,4 +1,5 @@
-writeTemplate = require "../write_template"
+writeTemplate = require('../writer').writeTemplate
+
 Inflector = require '../../inflector/inflector'
 
 path = require 'path'

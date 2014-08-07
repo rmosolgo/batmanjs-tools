@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @appName %></title>
+
+    <!-- Libraries -->
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/batman.js/0.16.0/batman.js'></script>
+
+    <!-- Batman.js App -->
+    <script type="text/javascript" src='/<%= @appFileName %>.js'></script>
+  </head>
+  <body>
+    <h1>Welcome to Batman.js!</h1>
+
+    <div data-yield='main'></div>
+
+    <script type="text/javascript">
+      <%= @appName %>.run()
+    </script>
+  </body>
+</html>

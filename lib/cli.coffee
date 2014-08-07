@@ -1,12 +1,14 @@
 argv = require('minimist')(process.argv.slice(2));
 Generator = require("../generator/generator")
-
+loadConfig = require("./load_config")
 
 class CLI
-  run: (config={}) ->
+  run: (config) ->
+    config ?= loadConfig()
     cmd = argv._.shift()
-    argv.appName ||= config.appName
-    argv.appRoot ||= config.appRoot
+
+    for own key, val of config
+      argv[key] ||= config[key]
 
     if cmd in ["generate", "g"]
       generator = new Generator(argv)

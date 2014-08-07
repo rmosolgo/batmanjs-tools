@@ -1,5 +1,5 @@
 path = require "path"
-writeTemplate = require "../write_template"
+Writer = require('../writer')
 Inflector = require '../../inflector/inflector'
 
 
@@ -51,10 +51,17 @@ generateModel = (className, options) ->
     attributes
   }
 
-  target = if options.dryRun || !options.appRoot?
+  shouldWrite = !(options.dryRun || !options.appRoot?)
+
+  target = if !shouldWrite
       undefined
     else
       path.join(options.appRoot, "models", fileName + ".coffee")
-  writeTemplate("model", data, target)
+
+  if shouldWrite && options.hasIndexHTML
+    jsFile = "/models/#{fileName}.js"
+    Writer.addJavaScriptFile(jsFile, options)
+
+  Writer.writeTemplate("model", data, target)
 
 module.exports = generateModel
